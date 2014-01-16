@@ -22,6 +22,19 @@
 	     	<h:outputLabel value="Idade:"></h:outputLabel><br/>
 	     	<h:inputText id="idade" styleClass="estilo_campos" value="#{cliBean.clienteVO.idade}"></h:inputText>
 	     	<br/><br/>
+	     	<h:outputLabel value="#{labels.lbcategoria}"></h:outputLabel>
+		   <br />
+			<h:selectOneMenu id="idCatSelectedCbox" value="#{cliBean.idCatSelectedCbox}" 
+		                 validatorMessage="Selecione uma categoria" required="true"
+			             requiredMessage="* Preencha esse campo" styleClass="estilo_campos">
+			      
+		      <f:selectItem itemLabel="Selecione..." noSelectionOption="true"  />  
+			  <f:selectItems  value="#{cliBean.cboxCategorias}" />
+			
+		</h:selectOneMenu> 
+		&nbsp;  
+		<h:message for="idCatSelectedCbox" styleClass="erros" />
+			<br/><br/>
 	     	<h:commandButton type="submit" styleClass="button" value="Atualizar" action="#{cliBean.update}"></h:commandButton>
 	     	<h:commandButton type="reset" styleClass="button" value="Limpar"></h:commandButton>
 	    </h:form>
